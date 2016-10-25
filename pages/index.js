@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
     constructor (props) {
         super(props);
-        const store = createStore(reducer, this.initialState, composeWithDevTools(
+        const store = createStore(reducer, props.initialState, composeWithDevTools(
             applyMiddleware(thunkMiddleware),
         ));
         if (typeof window !== 'undefined') {
