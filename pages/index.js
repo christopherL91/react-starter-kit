@@ -11,13 +11,14 @@ import reducer from '../reducers/index.js';
 import Counter from '../components/counter.js';
 
 export default class App extends React.Component {
-    // This will only be rendered on the server;
+    // This will only be rendered on the server.
     static async getInitialProps ({req}) {
         const state = {counter: 0};
         const store = createStore(reducer, state, applyMiddleware(thunkMiddleware));
         return {initialState: store.getState()};
     }
 
+    //  Runs in server and browser.
     constructor (props) {
         super(props);
         const store = createStore(reducer, props.initialState, composeWithDevTools(
@@ -32,10 +33,12 @@ export default class App extends React.Component {
         }
     }
 
+    //  Runs in browser.
     componentDidMount () {
         console.log('App is ready');
     }
 
+    //  Runs in browser.
     componentWillUnmount () {
         console.log('Good bye');
     }

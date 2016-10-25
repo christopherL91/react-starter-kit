@@ -8,7 +8,7 @@ import {increment, decrement} from '../actions/counter.js';
 const Counter = ({counter, increment, decrement}) => {
     return (
         <div>
-            <div>Number: {counter}</div>
+            <div>Counter: {counter}</div>
             <button onClick={() => increment()}>INCREMENT</button>
             <button onClick={() => decrement()}>DECREMENT</button>
         </div>
