@@ -2,7 +2,7 @@
 
 import {INCREMENT, DECREMENT} from '../actions/counter.js';
 
-const counter = (state = 0, action) => {
+export default (state = 0, action) => {
     switch (action.type) {
         case INCREMENT:
             return state + 1;
@@ -12,5 +12,3 @@ const counter = (state = 0, action) => {
             return state;
     }
 };
-
-export default counter;
