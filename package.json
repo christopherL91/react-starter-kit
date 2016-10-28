@@ -1,12 +1,25 @@
 {
-  "name": "next",
+  "name": "react-starter-kit",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "autotest": "nodemon --exec 'yarn run test || true'",
+    "test": "ava --verbose",
     "start": "next start"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
   },
   "dependencies": {
     "next": "^1.0.0",
@@ -14,5 +27,18 @@
     "redux": "^3.6.0",
     "redux-devtools-extension": "^1.0.0",
     "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "enzyme": "^2.5.1",
+    "jsx-test-helpers": "^1.1.0",
+    "nock": "^9.0.0",
+    "nodemon": "^1.11.0",
+    "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "redux-mock-store": "^1.2.1"
   }
 }
