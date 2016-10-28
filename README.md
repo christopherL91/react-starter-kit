@@ -9,6 +9,8 @@ This project includes a minimalistic react app using redux.
     $ yarn
     $ yarn run dev
 
+    $ yarn run test
+
 ```
 
 LICENSE: MIT
